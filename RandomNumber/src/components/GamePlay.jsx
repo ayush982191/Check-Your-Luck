@@ -19,10 +19,11 @@ function GamePlay({setPoint, numberChoose ,setRandomNo,setimgBtnClick}) {
     }
     const findRandomNo=()=>{
       // const randomNo=Math.floor(Math.random()*7);
+      
       const randomNo= Math.floor(Math.random() * 6) + 1;
       // rno=randomNo;
       setrno(randomNo);
-      console.log("image clicked with value",randomNo, " and chose no=",numberChoose);
+      // console.log("image clicked with value",randomNo, " and chose no=",numberChoose);
       setRandomNo(randomNo);
       setimgBtnClick((prev)=>!prev)
 

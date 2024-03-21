@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import ShowPoint from './ShowPoint'
 import ShowNumber from "./ShowNumber"
 import GamePlay from './GamePlay';
+import {ToastContainer,toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 function MainGame() {
     let [point,setPoint]=useState(0);
     const [randomNo,setRandomNo]=useState(-1);
@@ -12,6 +14,7 @@ function MainGame() {
     const checkNums=()=>{
        if(btnClick==true&&imgBtnClick==true && randomNo==numberChoose){
         // point+=numberChoose;
+        toast(`Hurrayyyyyyy Correct Number`)
         let incPoint=point;
         incPoint+=randomNo;
          setPoint(incPoint);
@@ -25,6 +28,7 @@ function MainGame() {
        setimgBtnClick(false)
        setNumberChoose(-1);
        setRandomNo(-1);
+       toast("Incorrect ")
       }else{
         // console.log("entering here");
       }
@@ -55,7 +59,8 @@ function MainGame() {
        </div>
        
         
-        </div>  
+        </div> 
+        <ToastContainer/> 
     </>
   )
 }
